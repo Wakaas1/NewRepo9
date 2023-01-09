@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- theme meta -->
+    <meta name="theme-name" content="Ys Systems" />
+
+    <title>Managment_System</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="/image/png" sizes="16x16" href="~/Temp/images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="~/Temp/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="~/Temp/plugins/chartist/css/chartist.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link href="~/Temp/plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="~/Temp/plugins/sweetalert/css/sweetalert.css" rel="stylesheet" />
+    <link href="~/Temp/css/style.css" rel="stylesheet">
+   
+   <link href="~/temp/plugins/select2/css/select2.min.css" rel="stylesheet" />
+       <link href="~/limonte-sweetalert2/sweetalert2.css" rel="stylesheet" />
+    <link href="~/limonte-sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr"><img src="~/Temp/images/logo1.png" alt=""> </b>
+                    <span class="logo-compact"><img src="~/Temp/images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                        <img src="~/Temp/images/logo-t.png" alt="">
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+        <partial name="_NavBar" />
+
+        <partial name="_SideBar" />
+
+        <div class="content-body">
+
+            <div class="container-fluid mt-3">
+   @RenderBody()
+                <partial name="_ModalView" />
+   </div>
+   </div>
+   <br />
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 -  Management System - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    </div>
+    <!-- Scripts -->
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    
+    <script src="~/Temp/plugins/common/common.min.js"></script>
+    <script src="~/Temp/js/custom.min.js"></script>
+    <script src="~/Temp/js/settings.js"></script>
+    <script src="~/Temp/js/gleek.js"></script>
+    <script src="~/Temp/js/styleSwitcher.js"></script>
+    <script src="~/temp/plugins/select2/js/select2.full.min.js"></script>
+   
+    <!-- Chartjs -->
+    <script src="~/Temp/plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="~/Temp/plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="~/Temp/plugins/d3v3/index.js"></script>
+    <script src="~/Temp/plugins/topojson/topojson.min.js"></script>
+    
+    
+    <!-- Morrisjs -->
+    <script src="~/Temp/plugins/raphael/raphael.min.js"></script>
+    <script src="~/Temp/plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="~/Temp/plugins/moment/moment.min.js"></script>
+    <script src="~/Temp/plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <!-- ChartistJS -->
+    >
+
+    <script src="~/Temp/plugins/tables/js/jquery.dataTables.min.js"></script>
+    <script src="~/Temp/plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Temp/plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+    <script src="~/Temp/plugins/sweetalert/js/sweetalert.min.js"></script>
+ 
+    <script src="~/Temp/js/dashboard/dashboard-1.js"></script>
+   
+    <script src="@Url.Content("~/lib/jquery-validation/dist/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/lib/jquery-validation/dist/additional-methods.js")"></script>
+    <script src="~/js/BootStrapNotify.js"></script>
+    <script src="~/limonte-sweetalert2/sweetalert2.all.js"></script>
+    <script src="~/limonte-sweetalert2/sweetalert2.all.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

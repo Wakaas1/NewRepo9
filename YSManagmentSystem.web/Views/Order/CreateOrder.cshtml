@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "CreateOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid list-inline">
+    <div class="card text-center " >
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="container">
+                        <button type="button" class="btn btn-primary center" data-toggle="modal" data-target="#exampleModalCenter" href="" data-url="/Order/AddOrderItem" data-type='Add'> <i class="fa fa-plus"></i> Add Order </button>
+                    </div>
+                </div>
+
+                <div class="col-md-10">
+                    <partial name="_AddNewCustomer" />
+                </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="card text-center">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <partial name="_OrderList" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card text-center">
+        <div class="card-body">
+            <div class="row list-inline">  
+                <div class="col-lg-4" >
+                    <a asp-action="Clear" asp-route-Id="@ViewBag.id" class="btn btn-danger">Clear</a>
+                    @*<a asp-action="OrderItem" asp-route-Id="@ViewBag.id" class=" btn btn-primary"></a>*@
+                 </div>
+                <div class="col-lg-6" style="margin-left:800px">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Grand Total : @ViewBag.tot</h5>
+                   </div>
+                    </div>                  
+                </div>
+                 
+            </div>
+        </div>        
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/orderdt.js"></script>
+}
+
+
+
+
+
+
+
+
+

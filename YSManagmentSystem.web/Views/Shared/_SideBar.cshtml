@@ -1,0 +1,68 @@
+﻿<div class="nk-sidebar">
+    <div class="nk-nav-scroll">
+        <ul class="metismenu" id="menu">
+            <!--|| User.IsInRole("User")  -->
+            @if (User.IsInRole("Admin"))
+            {
+
+                <li class="nav-label">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-lin k text-dark" asp-area="" asp-controller="User" asp-action="Index">Users List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Create A New User</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="CreateOrder">Create Order</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Products List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Categories List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">Orders List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">Customers List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Brand" asp-action="Index">Brands List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Supplier" asp-action="Index">Suppliers List</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="UserBrand" asp-action="Index">User Brand</a>
+                </li>
+            }
+            else
+            {
+                @if (User.IsInRole("Editor"))
+                {
+                    <li class="nav-label">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Products List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Categories List</a>
+                    </li>
+                }
+            }
+
+
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+

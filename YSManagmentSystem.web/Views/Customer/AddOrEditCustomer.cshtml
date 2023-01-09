@@ -1,0 +1,60 @@
+﻿@model YSManagmentSystem.Domain.Order.Customer
+
+@{
+
+    ViewData["Title"] = "AddOrEditCustomer";
+    Layout = null;
+    
+}
+
+<div class="modal-header">
+                            <h5 class="modal-title">Add Or Edit Customer</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="@Url.Content("/Customer/AddOrEditCustomer")" id="step-form-horizontal" class="step-form-horizontal" method="post">
+
+                <input type="hidden" asp-for="Id" />
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="text" asp-for="CustomerName" class="form-control" placeholder="Customer Name" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="text" asp-for="CustomerAddress" class="form-control" placeholder="Customer Address" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="text" asp-for="Email" class="form-control" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="text" asp-for="ContactNumber" class="form-control" placeholder="Contact Number" required>
+                        </div>
+                    </div>
+                    
+                </div>
+            
+               
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="Add">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>validateEmpForm()</script>
+
+

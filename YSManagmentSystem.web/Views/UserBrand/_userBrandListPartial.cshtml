@@ -1,0 +1,20 @@
+﻿@using HtmlHelpers.BeginCollectionItemCore;
+@using YSManagmentSystem.Domain.User;
+@model YSManagmentSystem.Domain.User.BrandsEdit
+
+@using (Html.BeginCollectionItem("BrandsEdit"))
+{
+    <th>
+        <td>
+            @Html.DisplayFor(i => Model.BrandName)
+        </td>
+        <td>
+            @Html.CheckBoxFor(i => Model.Checked)
+        </td>
+    </th>
+    @Html.HiddenFor(i => Model.Id)
+ }
+
+
+
+

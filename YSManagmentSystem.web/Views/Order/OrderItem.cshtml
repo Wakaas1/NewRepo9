@@ -1,0 +1,151 @@
+﻿@model IEnumerable<YSManagmentSystem.Domain.Order.OrderItemList>
+@{
+    ViewData["Title"] = "OrderItem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/invoice/css-style.css" rel="stylesheet" />
+
+<div class="container-fluid">
+ <div class="card text-center">
+  <div class="card-body">
+            <div class="cs-invoice cs-style1">
+                <div class="cs-invoice_in" id="download_section">
+                    <div class="cs-invoice_head cs-type1 cs-mb25">
+                        <div class="cs-invoice_left">
+                            <p class="cs-invoice_number cs-primary_color cs-mb0 cs-f16"><b class="cs-primary_color">Invoice No:</b> @ViewBag.ONum</p>
+                        </div>
+                        <div class="cs-invoice_center">
+                            <p class="cs-invoice_number cs-primary_color cs-mb0 cs-f16"><b class="cs-primary_color">Date:</b> @ViewBag.Date</p>
+                        </div>
+                        <div class="cs-invoice_right cs-text_right">
+                            <div class="cs-logo cs-mb5"><img src="~/invoice/favicon.png" height="40" width="40" alt="Logo"></div>
+                        </div>
+                    </div>
+                    <div class="cs-invoice_head cs-mb10">
+                        <div class="cs-invoice_left">
+                            <b class="cs-primary_color"> Driver Name:</b>
+                            <p>@ViewBag.DName</p>
+                        </div>
+                        <div class="cs-invoice_left">
+                            <b class="cs-primary_color"> Vehicle Registration Number:</b>
+                            <p>@ViewBag.VReg</p>
+                        </div>
+                        <div class="cs-invoice_left">
+                            <b class="cs-primary_color"> Area Name:</b>
+                            <p>@ViewBag.AName</p>
+                        </div>
+                        <div class="cs-invoice_left">
+                            <b class="cs-primary_color"> Sale Person Name:</b>
+                            <p>@ViewBag.SName</p>
+                        </div>
+                        <div class="cs-invoice_right cs-text_right">
+                            <b class="cs-primary_color">YS Traders</b>
+                            <p>
+                                Lehtrar Road, Islamabad,Pakistan <br>
+                                0333-3333333
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cs-table cs-style1 cs-mb30">
+                        <div class="cs-round_border">
+                            <div class="cs-table_responsive">
+                                <table class="cs-border_less">
+                                    <tbody>
+                                        <tr>
+                                            <td class="cs-width_4 cs-text_center"><p class="cs-accent_color cs-m0 cs-bold cs-f16 cs-special_item">Customer INFO:</p></td>
+                                            <td class="cs-width_4">
+                                                <span class="cs-primary_color cs-semi_bold">Name:</span> @ViewBag.CName <br>
+                                                <span class="cs-primary_color cs-semi_bold">Contact:</span> @ViewBag.Con <br>
+                                            </td>
+                                            <td class="cs-width_4">
+                                                <b class="cs-primary_color">Address:</b> <br>
+                                                @ViewBag.Address
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cs-table cs-style2 ">
+                        <div class="cs-round_border">
+                            <div class="cs-table_responsive">
+                                <table class="table" id="mytable">
+                                    <thead>
+                                        <tr>
+                                            <th class ="cs-width_4 cs-text_center">
+                                                Product Name
+                                            </th>
+                                            <th class="cs-width_4 cs-text_center">
+                                                Quantity
+                                            </th>
+                                            <th class="cs-width_4 cs-text_center">Price</th>
+                                            <th class="cs-width_4 cs-text_center">
+                                                Total
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td class ="cs-width_4 cs-text_center">
+                                                    @item.ProductName
+                                                </td>
+                                                <td class="cs-width_4 cs-text_center">
+                                                    @item.Quantity
+                                                </td>
+                                                <td class="cs-width_4 cs-text_center">@item.Price</td>
+                                                <td class="cs-width_4 cs-text_center">
+                                                    @item.Total
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="cs-invoice_footer">
+                            <div class="cs-left_footer cs-mobile_hide"></div>
+                            <div class="cs-right_footer">
+                                <table>
+                                    <tbody>
+                                        <tr class="cs-border_none">
+                                            <td class="cs-width_3 cs-border_top_0 cs-bold cs-f16 cs-primary_color">Discount Amount</td>
+                                            <td class="cs-width_3 cs-border_top_0 cs-bold cs-f16 cs-primary_color cs-text_right">@ViewBag.dis</td>
+                                        </tr>
+                                        <tr class="cs-border_none">
+                                            <td class="cs-width_3 cs-border_top_0 cs-bold cs-f16 cs-primary_color">Total Amount</td>
+                                            <td class="cs-width_3 cs-border_top_0 cs-bold cs-f16 cs-primary_color cs-text_right">@ViewBag.tot</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <!-- .cs-note -->
+                </div>
+                <div class="cs-invoice_btns cs-hide_print ">
+                    <a href="javascript:window.html" class="cs-invoice_btn cs-color1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewbox="0 0 512 512"><path d="M384 368h24a40.12 40.12 0 0040-40V168a40.12 40.12 0 00-40-40H104a40.12 40.12 0 00-40 40v160a40.12 40.12 0 0040 40h24" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></path><rect x="128" y="240" width="256" height="208" rx="24.32" ry="24.32" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect><path d="M384 128v-24a40.12 40.12 0 00-40-40H168a40.12 40.12 0 00-40 40v24" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></path><circle cx="392" cy="184" r="24"></circle></svg>
+                        <span>Print</span>
+                    </a>
+
+                    <button id="download_btn" class="cs-invoice_btn cs-color2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewbox="0 0 512 512"><title>Download</title><path d="M336 176h40a40 40 0 0140 40v208a40 40 0 01-40 40H136a40 40 0 01-40-40V216a40 40 0 0140-40h40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M176 272l80 80 80-80M256 48v288"></path></svg>
+                        <span>Download</span>
+                    </button>
+                    <a type="button" class="btn btn-secondary" href="/Order/Index?id=''"><i class="fa fa-arrow-circle-o-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/invoice/js-html2canvas.min.js"></script>
+    <script src="~/invoice/js-jspdf.min.js"></script>
+    <script src="~/invoice/js-main.js"></script>
+}

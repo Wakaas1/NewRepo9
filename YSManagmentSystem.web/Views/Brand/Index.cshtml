@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+    <div style="width:90%; margin:0 auto" class="tablecontainer">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" href="" data-url="/Brand/AddOrEditBrand" data-type='Add'> <i class="fa fa-plus"></i> Add Brand </button>
+        <table id="myTableBrand" class="table table-bordered" style="text-align:center" width="100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Brand Name</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+</div>
+
+
+
+@section Scripts {
+    <script src="~/js/branddt.js"></script>
+}

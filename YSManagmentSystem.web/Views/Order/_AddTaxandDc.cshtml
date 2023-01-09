@@ -1,0 +1,18 @@
+﻿ @using (Html.BeginForm("Total","Order", FormMethod.Post))
+{
+    <div class="row">
+  <div class="col-sm-3">
+        <input type="number" name="tax" class="form-control" placeholder="Tax" />
+                 </div>
+                <div class="col-sm-3">
+
+                    <input type="number" name="Dc" class="form-control" placeholder="Delivery Charges" />
+                    </div>
+<div class="col-sm-3">
+
+    <input type="submit" class="btn btn-secondary" value="+" />
+</div>
+    </div>
+
+
+}

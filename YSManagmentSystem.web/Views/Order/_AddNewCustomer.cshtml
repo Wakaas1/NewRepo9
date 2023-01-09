@@ -1,0 +1,37 @@
+﻿@using (Html.BeginForm("Checkout", "Order", FormMethod.Post))
+{
+    <div class="row list-inline">
+        <div class="form-control-sm">
+            <select class="js-example-basic-single form-control-sm" name="DId" id="DId" asp-items="@ViewBag.DI">
+                        <option value="1">Abid</option>
+                    </select>
+                </div>  
+                <div class="form-control-sm">
+                    <select class="js-example-basic-single form-control-sm" name="Vd" id="Vd" asp-items="@ViewBag.VD">
+                        <option value="1">TD-409</option>
+                    </select>
+                </div>
+        <div class="form-control-sm">
+            <select class="js-example-basic-single form-control-sm" name="SId" id="SId" asp-items="@ViewBag.SP">
+                        <option value="0">Select Sale Person Name</option>
+                    </select>
+                </div>
+        <div class="form-control-sm">
+            <select class="js-example-basic-single form-control-sm" name="AId" id="AId" asp-items="@ViewBag.Area">
+                        <option value="0">Select Area</option>
+                    </select>
+                </div>
+        <div class="col-sm-3">
+            <select class="js-example-basic-single form-control-sm " name="CId" id="CId" asp-items="@ViewBag.CId">
+    <option value="0">Choose a Customer</option>
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <input type="submit" class="btn btn-secondary list-inline" value="Checkout" />
+        </div>
+    </div>
+}
+
+
+
+

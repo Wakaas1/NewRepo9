@@ -1,0 +1,104 @@
+﻿@model YSManagmentSystem.Domain.Product.Product
+
+@{
+
+    ViewData["Title"] = "CreateOrEditProduct";
+    Layout = null;
+    //SelectList ListItemCategory = ViewBag.CId;
+}
+<div class="modal-header">
+                            <h5 class="modal-title">Add Or Edit Product</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="@Url.Content("/Product/CreateOrEditProduct")" id="step-form-horizontal" class="step-form-horizontal" method="post">
+
+
+    <input type="hidden" asp-for="Id" />
+    
+    <div class="row">
+    <div class="col-lg-6">
+        <div class="form-group">
+            <input type="text" asp-for="ProductName" class="form-control" placeholder="ProductName" required>
+        </div>
+    </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="text" asp-for="Quantity" class="form-control" placeholder="Quantity" required>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="text" asp-for="Description" class="form-control" placeholder="Description" required>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="text" asp-for="ProductCode" class="form-control" placeholder="ProductCode" required>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="text" asp-for="Price" class="form-control" placeholder="Price" required>
+            </div>
+        </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+                <input type="text" asp-for="Image" class="form-control" placeholder="Image">
+            </div>
+        </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <select asp-for="CategoryId" asp-items="@ViewBag.CId" class="custom-select mr-sm-2">
+                                <option value="0">Choose A Category</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <select asp-for="LocationId" asp-items="@ViewBag.LId" class="custom-select mr-sm-2">
+                                <option value="0">Choose A Location</option>
+                            </select>
+                        </div>
+                    </div>
+         <div class="col-lg-6">
+            <div class="form-group">
+                            <select asp-for="SupplierId" asp-items="@ViewBag.SId" class="custom-select mr-sm-2">
+                    <option value="0">Choose A Supplier</option>
+                </select>
+            </div>
+        </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+                            <select asp-for="BrandId" asp-items="@ViewBag.BId" class="custom-select mr-sm-2">
+                    <option value="0">Choose A Brand</option>
+                </select>
+            </div>
+        </div>
+
+
+    </div>
+              @*  <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.CategoryId, new { @class = "control-label" }) <br />
+                    @Html.DropDownList("ddlCategory", ListItemCategory, "", new { id = "ddlCategory", style = " width: 240px; cursor: pointer;  padding: 6px 15px;margin-top: 0px 0px;" })
+                    @Html.ValidationMessageFor(model => model.CategoryName)
+                </div>
+*@
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="Add">Submit</button>
+                </div>
+
+
+</form>
+</div>
+</div>
+</div>
+
+<script>validateEmpForm()</script>
+
+

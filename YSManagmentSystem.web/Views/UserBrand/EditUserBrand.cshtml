@@ -1,0 +1,40 @@
+﻿@model IEnumerable<YSManagmentSystem.Domain.User.BrandsEdit>
+
+@{
+
+    Layout = null;
+
+}
+
+<h2>Edit User Brand</h2>
+
+<form action="@Url.Content("/UserBrand/EditUserBrand")" id="myform" method="post">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>@ViewBag.Email </h4>        
+
+                @foreach (var item in Model)
+                 {
+                      Html.RenderPartialAsync("_userBrandListPartial", item);
+                 }
+            
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="Add">Submit</button>
+        </div>
+        </div>
+    </div>
+    
+</form>
+<script>validateEmpForm()</script>
+
+
+
+
+
+
+
+
+
+
+

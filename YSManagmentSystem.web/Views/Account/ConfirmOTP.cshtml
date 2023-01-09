@@ -1,0 +1,21 @@
+﻿@model YSManagmentSystem.web.DTO.OTP
+
+
+<h1>Confirmation Link </h1>
+
+<h4>Please click on this button for verfiy email confirmation link is verified...</h4>
+<div class="container register">
+    <div class="row">
+        <div class="col-md-12">
+            <form method="post">
+                <div class="form-group">
+
+                    <input type="hidden" asp-for="Token" class="form-control" />
+
+                </div>
+                <button type="submit" class="btn-secondary">Verify</button>
+            </form>
+
+        </div>
+    </div>
+</div>

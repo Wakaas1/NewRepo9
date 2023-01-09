@@ -1,0 +1,67 @@
+﻿@model List<YSManagmentSystem.Domain.Order.OrderItemList>
+
+
+
+<div class="container">
+    <div style="width:90%; margin:0 auto" class="tablecontainer">
+        <a type="button" class="btn btn-primary" href="/Order/AddOrderItem?id=@ViewBag.id "> <i class="fa fa-plus"></i> Add Order </a>
+    </div>
+</div>
+<br />
+
+<h1>Order Item List</h1>
+
+<div class="container-fluid">
+    <div class="card text-center">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+
+                                <th>
+                                    Product Name
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Total
+                                </th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Quantity)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Total)
+                                    </td>
+                                    <td>
+                                        <a asp-action="AddOrderItem" asp-route-id="@item.Id">Edit</a> |
+                                        <a asp-action="AddOrderItem" asp-route-id="@item.Id">Details</a> |
+                                        <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">Remove</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

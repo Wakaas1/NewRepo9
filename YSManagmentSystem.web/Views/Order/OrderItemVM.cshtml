@@ -1,0 +1,36 @@
+﻿@model YSManagmentSystem.web.DTO.OrderListingVm
+@{
+    ViewData["Title"] = "OrderItemVM";
+}
+
+<h1>OrderItemVM</h1>
+
+<table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in @Model.OrderItems)
+        {
+                       <tr>
+                           <td>
+                    @item.ProductName
+                           </td>
+                            <td>
+                    @item.Quantity
+                            </td>
+                            <td>
+                    @item.Price
+                            </td>
+                            <td>
+                    @item.Total
+                            </td>
+                       </tr>
+        }
+            </tbody>
+        </table>

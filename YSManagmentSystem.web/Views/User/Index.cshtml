@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-body">
+    <div style="width:90%; margin:0 auto" class="tablecontainer">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" href="" data-url="/Role/CreateRole" data-type='Add'> <i class="fa fa-plus"></i> Add New Role </button>
+        <table id="myTableUser" class="table table-bordered" style="text-align:center">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>User Name</th>
+                    <th>User Email</th>
+                    <th>Role Assigned</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+</div>
+   
+
+@section Scripts {
+    <script src="~/js/userdt.js"></script>
+}
